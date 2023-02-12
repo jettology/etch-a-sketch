@@ -1,0 +1,163 @@
+@font-face {
+    font-family: Parelia;
+    src: url("fonts/Parelia.ttf")
+}
+
+@font-face {
+    font-family: YouthBeauty;
+    src: url("fonts/youth-and-beauty.ttf")
+}
+
+@font-face {
+    font-family: Fonarto;
+    src: url("fonts/Fonarto.ttf")
+}
+
+@font-face {
+    font-family: Nasalization;
+    src: url("fonts/Nasalization.otf")
+}
+
+@font-face {
+    font-family: AlteHaasGrotesk;
+    src: url("fonts/AlteHaasGroteskRegular.ttf")
+}
+
+@font-face {
+    font-family: Monda;
+    src: url("fonts/Monda-Regular.ttf")
+}
+
+/* Global variables */
+:root {
+    --console-height: 550px;
+    --console-width: 700px;
+
+    --screen-height: 350px;
+    --screen-width: 500px;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#console {
+    height: var(--console-height);
+    width: var(--console-width);
+
+    background-color: red;
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    align-items: center;
+
+    margin: 26px;
+
+    /* border-color: rgb(69, 69, 69);; */
+
+    border: 5px solid darkred;
+    border-radius: 16px;
+}
+
+#title {
+    height: 60px;
+    width: 250px;
+
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+
+    color: gold;
+    font-size: 42px;
+    font-weight: normal;
+    font-family: YouthBeauty;
+    text-shadow: 2px 2px 2px black;
+
+}
+
+#screen-container {
+    height: var(--screen-height);
+    width: var(--screen-width);
+    background-color: gray;
+    display: grid;
+    gap: 0px;
+
+    border-color: rgb(69, 69, 69);
+    border-style: solid;
+    border-width: 2px;
+}
+
+#ui-container {
+    display: flex;
+    height: auto;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+
+    border-color: hotpink;
+    border-style: solid;
+    border-width: 2px;
+}
+
+#button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    width: 420px;
+
+    border-color: hotpink;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.button {
+    height: 30px;
+    width: 60px;
+
+    border-color: hotpink;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.knob-outer {
+    background-color: white;
+    height: 80px;
+    width: 80px;
+    border-color: black;
+    border-width: 3px;
+    border-radius: 50%;
+    border-style: solid;
+    box-shadow: rgb(0,0,0,0.4) 4px 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.knob-inner {
+    height: 70px;
+    width: 70px;
+    border-color: gray;
+    border-width: 2px;
+    border-radius: 50%;
+    border-style: solid;
+}
+
+#left-knob {}
+
+#right-knob {}
+
+
+.footer {
+    font-size: 18px;
+    color: white;
+    text-shadow: 2px 2px 2px red;
+    /* font-family: AlteHaasGrotesk; */
+    font-family: Nasalization;
+}
