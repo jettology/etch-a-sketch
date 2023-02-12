@@ -9,42 +9,57 @@
 
 
 <body>
-    <div id="console">
-        <div id="title">
-            Etch A Sketch
-        </div>
+    <div id="console-container">
+        <div id="console">
+            <div id="title">
+                Etch A Sketch
+            </div>
+    
+            <div id="screen-container">
+    
+            </div>
+    
+            <div id="slider-container">
+                <div id="slider-text">24 x 16</div>
 
-        <div id="screen-container">
+                <input type="range" min="2" max="100" value="16" step="2" id="slider">
+            </div>
 
-        </div>
-
-        <div id="ui-container">
-            <div class="knob-outer">
-                <div id="left-knob" class="knob-inner">
-
+    
+            <div id="ui-container">
+                <div class="knob-outer">
+                    <div id="left-knob" class="knob-inner">
+    
+                    </div>
                 </div>
-            </div>
-
-            <div id="button-container">
-                <div id="clear-container" class="button"></div>
-                <div id="eraser-container" class="button"></div>
-                <div id="color-container" class="button"></div>
-                <div id="input-container" class="button"></div>
-            </div>
-
-            <div class="knob-outer">
-                <div id="right-knob" class="knob-inner">
+    
+                <div id="button-container">
+                    <button id="brush-button" class="button">BRUSH</button>
+                    <button id="eraser-button" class="button">ERASER</button>
+                    <button id="color-button" class="button">COLOR</button>
+                    <button id="clear-button" class="button">CLEAR</button>
+                    <button id="input-button" class="button">INPUT</button>
+                </div>
+    
+                <div class="knob-outer">
+                    <div id="right-knob" class="knob-inner">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="footer">
+
+    <footer>
         Copyright © Jettology 2023
-    </div>
+    </footer>
+
 
     <!-- Script -->
     <script src="index.js"></script>
+
+
+
 </body>
 
 

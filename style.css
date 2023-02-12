@@ -1,16 +1,6 @@
 @font-face {
-    font-family: Parelia;
-    src: url("fonts/Parelia.ttf")
-}
-
-@font-face {
     font-family: YouthBeauty;
     src: url("fonts/youth-and-beauty.ttf")
-}
-
-@font-face {
-    font-family: Fonarto;
-    src: url("fonts/Fonarto.ttf")
 }
 
 @font-face {
@@ -19,22 +9,24 @@
 }
 
 @font-face {
-    font-family: AlteHaasGrotesk;
-    src: url("fonts/AlteHaasGroteskRegular.ttf")
-}
-
-@font-face {
     font-family: Monda;
     src: url("fonts/Monda-Regular.ttf")
 }
 
+@font-face {
+    font-family: Pokemon;
+    src: url("fonts/pkmndp.ttf")
+}
+
 /* Global variables */
 :root {
-    --console-height: 550px;
-    --console-width: 700px;
+    --console-height: 630px;
+    --console-width: 800px;
 
-    --screen-height: 350px;
-    --screen-width: 500px;
+    --screen-height: 400px;
+    --screen-width: 600px;
+
+    --lighter-gray: rgb(240, 240, 240);
 }
 
 body {
@@ -44,21 +36,23 @@ body {
     align-items: center;
 }
 
+#console-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(var(--console-height) + 15px);
+    width: calc(var(--console-width) + 15px);
+    margin: 30px;
+}
+
 #console {
     height: var(--console-height);
     width: var(--console-width);
-
     background-color: red;
-
     display: flex;
     flex-direction: column;
-    /* justify-content: space-evenly; */
     align-items: center;
-
-    margin: 26px;
-
-    /* border-color: rgb(69, 69, 69);; */
-
+    position: absolute;
     border: 5px solid darkred;
     border-radius: 16px;
 }
@@ -69,7 +63,8 @@ body {
 
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
+    margin: 10px;
 
     color: gold;
     font-size: 42px;
@@ -82,13 +77,102 @@ body {
 #screen-container {
     height: var(--screen-height);
     width: var(--screen-width);
-    background-color: gray;
+    background-color: white;
     display: grid;
     gap: 0px;
 
-    border-color: rgb(69, 69, 69);
+    /* border-color: rgb(69, 69, 69);
     border-style: solid;
-    border-width: 2px;
+    border-width: 2px; */
+
+    border: darkred 4px;
+    border-style: solid;
+}
+
+#slider-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 250px;
+    right: -102px;
+    height: 60px;
+    width: 300px;
+    transform: rotate(270deg);
+}
+
+#slider {
+    height: 30px;
+    width: 250px;
+}
+
+#slider-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 26px;
+    width: 60px;
+    font-family: Pokemon;
+    font-weight: bolder;
+    font-size: 13px;
+    color: black;
+    background: whitesmoke;
+    border: 3px solid darkred;
+    border-radius: 5px;
+    transform: rotate(90deg);
+    box-shadow: inset rgb(0, 0, 0, 0.4) 4px 4px;
+
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 100%;
+    width: 100%;
+    background: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    border: 3px solid darkred;
+    border-radius: 25px;
+    background: whitesmoke;
+    padding: 1px;
+    box-shadow: inset rgb(0, 0, 0, 0.4) -4px 4px;
+
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border: 3px darkred solid;
+    border-radius: 50%;
+    background: orangered;
+    cursor: pointer;
+    box-shadow: rgb(0, 0, 0, 0.4) -2px 2px;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border: 3px darkred solid;
+    border-radius: 50%;
+    background: gold;
+    cursor: pointer;
+    box-shadow: rgb(0, 0, 0, 0.4) -2px 2px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+
+    /* Hides the slider so custom styles can be added */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
 }
 
 #ui-container {
@@ -97,10 +181,6 @@ body {
     width: 90%;
     margin: auto;
     justify-content: space-between;
-
-    border-color: hotpink;
-    border-style: solid;
-    border-width: 2px;
 }
 
 #button-container {
@@ -108,20 +188,31 @@ body {
     justify-content: space-around;
     align-items: center;
     height: auto;
-    width: 420px;
-
-    border-color: hotpink;
-    border-style: solid;
-    border-width: 2px;
+    width: 70%;
 }
 
 .button {
-    height: 30px;
+    height: 40px;
     width: 60px;
+    font-family: Monda;
+    font-size: 10px;
+    background: var(--lighter-gray);
+    /* background: lightgray; */
 
-    border-color: hotpink;
-    border-style: solid;
-    border-width: 2px;
+    border: solid 3px black;
+    border-radius: 10px;
+    box-shadow: rgb(0, 0, 0, 0.4) 4px 4px;
+}
+
+.button:hover {
+    height: 40px;
+    width: 60px;
+    font-family: Monda;
+    font-size: 10px;
+
+    border: solid 3px black;
+    border-radius: 10px;
+    box-shadow: rgb(0, 0, 0, 0.4) 4px 4px;
 }
 
 .knob-outer {
@@ -132,12 +223,11 @@ body {
     border-width: 3px;
     border-radius: 50%;
     border-style: solid;
-    box-shadow: rgb(0,0,0,0.4) 4px 4px;
+    box-shadow: rgb(0, 0, 0, 0.4) 6px 6px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .knob-inner {
@@ -154,7 +244,10 @@ body {
 #right-knob {}
 
 
-.footer {
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 18px;
     color: white;
     text-shadow: 2px 2px 2px red;
