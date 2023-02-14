@@ -295,8 +295,15 @@ function rightKeyDown(e) {
 
 // turn brush on
 function turnBrushOn() {
+    // fix issue with subsequent "eraser" click
+    if (prevBrushColor === "white") {
+        prevBrushColor = colorPicker.value;
+    }
+
     brushColor = prevBrushColor;
     overColor = brushColor;
+
+
 }
 
 // turn brush into eraser
