@@ -21,7 +21,7 @@
 /* Global variables */
 :root {
     --console-height: 630px;
-    --console-width: 800px;
+    --console-width: 840px;
 
     --screen-height: 400px;
     --screen-width: 600px;
@@ -89,20 +89,268 @@ body {
     border-style: solid;
 }
 
-#slider-container {
+/* ========================================== */
+/* TOGGLE SWITCH: INPUT                       */
+/* ========================================== */
+
+#input-switch-container {
     display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    position: absolute;
+    top: 110px;
+    left: 22px;
+    height: auto;
+    width: 70px;
+}
+
+#input-switch-border {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* height: auto; */
+    width: 62px;
+    margin: 5px;
+
+    border: 3px solid darkred;
+    border-radius: 5px;
+    /* box-shadow: inset rgb(0, 0, 0, 0.4) 2px 2px; */
+    box-shadow: inset rgb(169, 169, 169, 0.4) 2px 2px;
+}
+
+#input-switch-title {
+    color: darkred;
+    font-family: Monda;
+    font-weight: bolder;
+    font-size: 14px;
+    text-shadow: 1px 1px 1px black;
+}
+
+.switch-text {
+    color: darkred;
+    font-family: Monda;
+    font-weight: normal;
+    font-size: 10px;
+    margin: 3px;
+}
+
+#input-switch {
+    height: 20px;
+    width: 36px;
+    transform: rotate(270deg);
+    margin: 8px 0;
+    border: 3px solid darkred;
+    border-radius: 12px;
+}
+
+/* #input-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+} */
+
+/* ========================================== */
+/* TOGGLE SWITCH: GRID                        */
+/* ========================================== */
+
+#grid-switch-container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
     align-items: center;
     position: absolute;
     top: 250px;
-    right: -102px;
-    height: 60px;
-    width: 300px;
+    left: 22px;
+    height: auto;
+    width: 70px;
+}
+
+#grid-switch-border {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* height: auto; */
+    width: 62px;
+    margin: 5px;
+
+    border: 3px solid darkred;
+    border-radius: 5px;
+    /* box-shadow: inset rgb(0, 0, 0, 0.4) 2px 2px; */
+    box-shadow: inset rgb(169, 169, 169, 0.4) 2px 2px;
+}
+
+#grid-switch-title {
+    color: darkred;
+    font-family: Monda;
+    font-weight: bolder;
+    font-size: 14px;
+    text-shadow: 1px 1px 1px black;
+}
+
+#grid-switch {
+    height: 20px;
+    width: 36px;
     transform: rotate(270deg);
+    margin: 8px 0;
+    border: 3px solid darkred;
+    border-radius: 12px;
+}
+
+/* ========================================== */
+/* TOGGLE SLIDERS                             */
+/* ========================================== */
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: whitesmoke;
+    -webkit-transition: .4s;
+    transition: .4s;
+    box-shadow: inset rgb(0, 0, 0, 0.4) -4px 4px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    left: 2px;
+    top: 2px;
+    border: 3px solid darkred;
+    background-color: orangered;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 12px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+    box-shadow: rgb(0, 0, 0, 0.4) -2px 2px;
+}
+
+.slider:hover:before {
+    background-color: gold;
+}
+
+/* ========================================== */
+/* COLOR PICKER                               */
+/* ========================================== */
+
+
+#color-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 390px;
+    left: 22px;
+    width: 70px;
+}
+
+#color-title {
+    color: darkred;
+    font-family: Monda;
+    font-weight: bolder;
+    font-size: 14px;
+    text-shadow: 1px 1px 1px black;
+}
+
+#color-picker {
+    -webkit-appearance: none;
+    appearance: none;
+    background: red;
+    box-sizing: content-box;
+    border: 3px solid darkred;
+    border-radius: 5px;
+    /* box-shadow: inset rgb(0, 0, 0, 0.4) 2px 2px; */
+    box-shadow: inset rgb(169, 169, 169, 0.4) 2px 2px;
+
+    display: flex;
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    padding: 2px 3px;
+    cursor: pointer;
+}
+
+/* ========================================== */
+/* GRID SIZE SLIDER                           */
+/* ========================================== */
+
+#slider-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 110px;
+    right: 18px;
+    height: 345px;
+    width: 80px;
+}
+
+#slider-border {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    height: 315px;
+    width: 100%;
+    margin: 5px;
+    padding: 4px 0px;
+
+    border: 3px solid darkred;
+    border-radius: 5px;
+    /* box-shadow: inset rgb(0, 0, 0, 0.4) 2px 2px; */
+    box-shadow: inset rgb(169, 169, 169, 0.4) 2px 2px;
+}
+
+#slider-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 260px;
+    transform: rotate(270deg);
+    margin: 100px 0px;
+
+    /* border: white solid 1px; */
+
+}
+
+#slider-title {
+    color: darkred;
+    font-family: Monda;
+    font-weight: bolder;
+    font-size: 14px;
+    text-shadow: 1px 1px 1px black;
 }
 
 #slider {
     height: 30px;
     width: 250px;
+
+    /* border: white solid 1px; */
+
 }
 
 #slider-text {
@@ -118,9 +366,8 @@ body {
     background: whitesmoke;
     border: 3px solid darkred;
     border-radius: 5px;
-    transform: rotate(90deg);
     box-shadow: inset rgb(0, 0, 0, 0.4) 4px 4px;
-
+    margin: 5px;
 }
 
 input[type="range"] {
@@ -141,6 +388,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
+    appearance: none;
     height: 16px;
     width: 16px;
     border: 3px darkred solid;
@@ -157,7 +405,7 @@ input[type="range"]:hover::-webkit-slider-thumb {
     border: 3px darkred solid;
     border-radius: 50%;
     background: gold;
-    cursor: pointer;
+    cursor: grab;
     box-shadow: rgb(0, 0, 0, 0.4) -2px 2px;
 }
 
@@ -174,6 +422,10 @@ input[type=range]::-ms-track {
     border-color: transparent;
     color: transparent;
 }
+
+/* ========================================== */
+/* BUTTONS                                    */
+/* ========================================== */
 
 #ui-container {
     display: flex;
@@ -193,12 +445,13 @@ input[type=range]::-ms-track {
 
 .button {
     height: 40px;
-    width: 60px;
+    width: 70px;
+    color: black;
     font-family: Monda;
-    font-size: 10px;
+    font-size: 13px;
+    font-weight: bolder;
     background: var(--lighter-gray);
-    /* background: lightgray; */
-
+    cursor: pointer;
     border: solid 3px black;
     border-radius: 10px;
     box-shadow: rgb(0, 0, 0, 0.4) 4px 4px;
@@ -206,14 +459,22 @@ input[type=range]::-ms-track {
 
 .button:hover {
     height: 40px;
-    width: 60px;
+    width: 70px;
     font-family: Monda;
-    font-size: 10px;
-
-    border: solid 3px black;
+    font-size: 13px;
+    font-weight: bolder;
+    background: var(--lighter-gray);
+    cursor: pointer;
+    border: solid 3px coral;
     border-radius: 10px;
     box-shadow: rgb(0, 0, 0, 0.4) 4px 4px;
+    color: white;
+    background: darkred;
 }
+
+/* ========================================== */
+/* KNOBS                                      */
+/* ========================================== */
 
 .knob-outer {
     background-color: white;
@@ -239,10 +500,49 @@ input[type=range]::-ms-track {
     border-style: solid;
 }
 
-#left-knob {}
+/* ========================================== */
+/* HELP                                       */
+/* ========================================== */
+#help-text {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    height: 360px;
+    width: 550px;
+    top: 100px;
+    left: 140px;
+    border: dashed black 4px;
+    border-radius: 10px;
+    background: beige;
+    color: darkred;
+    font-family: Monda;
+    font-weight: bolder;
+}
 
-#right-knob {}
+b {
+    text-shadow: 1px 1px 1px darkred;
+    font-size: 13px;
+}
 
+ul {
+    margin: 0;
+    padding-top: 30px;
+    font-size: 14px;
+    text-shadow: 1px 1px 1px black;
+}
+
+li {
+    margin-left: 2em;
+    padding-top: 10px;
+    font-size: 12px;
+    text-shadow: none;
+}
+
+
+
+/* ========================================== */
+/* FOOTER                                     */
+/* ========================================== */
 
 footer {
     display: flex;

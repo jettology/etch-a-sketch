@@ -14,33 +14,88 @@
             <div id="title">
                 Etch A Sketch
             </div>
-    
-            <div id="screen-container">
-    
+
+            <div id="screen-container"></div>
+
+
+            <div id="input-switch-container">
+                <div id="input-switch-title">INPUT</div>
+
+                <div id="input-switch-border">
+                    <div id="keyboard-text" class="switch-text">KEYBOARD</div>
+                    <label id="input-switch">
+                        <input type="checkbox" class="input-checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <div id="mouse-text" class="switch-text">MOUSE</div>
+                </div>
             </div>
-    
+
+            <div id="grid-switch-container">
+                <div id="grid-switch-title">GRID</div>
+
+                <div id="grid-switch-border">
+                    <div id="gridon-text" class="switch-text">ON</div>
+                    <label id="grid-switch">
+                        <input type="checkbox" id="grid-checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <div id="gridoff-text" class="switch-text">OFF</div>
+                </div>
+            </div>
+
+            <div id="color-container">
+                <div id="color-title">COLOR</div>
+                <input type="color" id="color-picker">
+            </div>
+
+
+
             <div id="slider-container">
-                <div id="slider-text">24 x 16</div>
+                <div id="slider-title">GRID SIZE</div>
 
-                <input type="range" min="2" max="100" value="16" step="2" id="slider">
+                <div id="slider-border">
+                    <div id="slider-text">24 x 16</div>
+                    <div id="slider-input-container">
+                        <input type="range" min="2" max="100" value="16" step="2" id="slider">
+                    </div>
+                </div>
+
             </div>
 
-    
+
             <div id="ui-container">
                 <div class="knob-outer">
                     <div id="left-knob" class="knob-inner">
-    
+
                     </div>
                 </div>
-    
+
                 <div id="button-container">
                     <button id="brush-button" class="button">BRUSH</button>
                     <button id="eraser-button" class="button">ERASER</button>
-                    <button id="color-button" class="button">COLOR</button>
                     <button id="clear-button" class="button">CLEAR</button>
-                    <button id="input-button" class="button">INPUT</button>
+                    <button id="help-button" class="button">HELP</button>
+                    <span id="help-text">
+                        <ul>INPUT:
+                            <li><b>MOUSE</b> : draw as you normally would with your cursor</li>
+                            <li><b>KEYBOARD</b> : select a starting cell then use the ARROW KEYS to draw</li>
+                        </ul>
+                        <ul>
+                            GRID:
+                            <li>Toggle grid lines</li>
+                        </ul>
+                        <ul>
+                            COLOR:
+                            <li>Change brush color</li>
+                        </ul>
+                        <ul>
+                            GRID SIZE:
+                            <li>Adjust resolution</li>
+                        </ul>
+                    </span>
                 </div>
-    
+
                 <div class="knob-outer">
                     <div id="right-knob" class="knob-inner">
                     </div>
